@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
+
+body {
+  color: #333;
+  font-family: 'Open Sans';
+  background-color: floralWhite;
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+.fancy-h1 {
+  margin: 0;
+  padding: 0px 25px;
+  color: snow;
+  text-align: center;
+  font-size: 40px;
+  font-family: Montserrat;
+  letter-spacing: 3px;
+  line-height: 1.25;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: violet;
+  text-shadow: -3px 3px 6px rgba(0,0,0,0.15);
+}
+
+.fancy-h2 {
+  color: snow;
+  font-size: 32px;
+  font-family: Montserrat;
+  letter-spacing: 1px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: violet;
+  text-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+hr {
+  border-width: 0.5px;
+  border-color: #282c34;
+}
+
+
+/* =============================================================================
+                                      #image-form
+============================================================================= */
+
+
+#image-form {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#image-form label {
+  display: inline-block;
+  width: 100%;
+  padding: 0 40px 0 0;
+  font-weight: bold;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Note: Bootstrap already applies position: relative to columns somewhere around
+line 150 in 4.3.1. That said, I'm setting it here as a reminder. */
+#image-form #image-col { position: relative; }
+
+#image-form #image-input { display: none; }
+
+
+/* #user-image-thumbnail-container & #user-image-thumbnail work together
+to allow images of different dimensions to be contained within
+#user-image-thumbnail-container without distorting the dimensions. */
+#image-form #user-image-thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 125px;
+  transform: translateY(-50%);
+  height: 38px;
+  width:  38px;
+  background-color: #333;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#image-form #user-image-thumbnail {
+  display: block;
+  max-height: 100%;
+  max-width:  100%;
+}
+
+
+/* ============================
+      Bootstrap Tweaks.
+=========================== */
+
+
+.border         { border: 2px solid #61DAFB !important; }
+.border.rounded { border-radius: 15px !important; }
+
+.btn.btn-primary {
+  background-color: #61DAFB;
+  border-color: rgba(0,0,0,0.15);
+}
+
+.btn.btn-primary:active { background-color: #3fd2fa !important; }
+
+
+/* =============================================================================
+        Media Queries (Mobile-First, matching Bootstrap's Breakpoints)
+============================================================================= */
+/* Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default. */
+
+
+
+/* ===============================
+Small devices (landscape phones, 576px - 767px)
+================================ */
+
+
+@media (min-width: 576px) {
+  #image-form label {
+    margin: 0;
+    text-align: right; /* Won't work with inline-block unless width is set. */
+  }
+}
+
+
+/* ===============================
+Medium devices (tablets, 768px - 991px)
+================================ */
+
+
+@media (min-width: 768px) {
+}
+
+
+/* ===============================
+Large devices (desktops, 992px - 1199px)
+================================ */
+
+
+@media (min-width: 992px) {
+  .fancy-h1   { font-size: 50px; }
+  #image-form { max-width: 900px; }
+}
+
+
+/* ===============================
+Extra large devices (large desktops, 1200px and up)
+================================ */
+
+
+@media (min-width: 1200px) {
+  .fancy-h1   { font-size: 64px; }
+  #image-form { max-width: 1000px; }
+}
